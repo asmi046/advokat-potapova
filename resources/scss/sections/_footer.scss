@@ -1,0 +1,71 @@
+// =============================================================================
+// Footer
+// =============================================================================
+@use '../variables' as *;
+@use '../mixins' as *;
+
+.footer {
+    background-color: $color-footer;
+    color: $color-white;
+    padding-top: $section-padding-y;
+    padding-bottom: $section-padding-y;
+
+    &__inner {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        align-items: center;
+        text-align: center;
+    }
+
+    &__logo img {
+        height: 50px;
+        width: auto;
+        filter: brightness(0) invert(1);
+    }
+
+    &__nav {
+        @include reset-list;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
+    }
+
+    &__link {
+        font-family: $font-body;
+        font-size: $font-size-sm;
+        color: $color-white;
+        transition: color $transition-base;
+
+        &:hover,
+        &:focus-visible {
+            color: $color-primary;
+        }
+    }
+
+    &__contacts {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 4px;
+    }
+
+    &__contact-link {
+        font-family: $font-body;
+        font-size: $font-size-sm;
+        color: $color-white;
+        transition: color $transition-base;
+
+        &:hover,
+        &:focus-visible {
+            color: $color-primary;
+        }
+    }
+
+    &__copy {
+        font-size: 12px;
+        color: rgba($color-white, 0.6);
+        margin-top: 10px;
+    }
+}

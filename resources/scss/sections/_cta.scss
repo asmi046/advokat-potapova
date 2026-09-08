@@ -1,0 +1,101 @@
+// =============================================================================
+// CTA
+// =============================================================================
+@use '../variables' as *;
+@use '../mixins' as *;
+
+.cta {
+    position: relative;
+    overflow: hidden;
+    background-image: url('/img/cta.webp');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: $color-white;
+    border-bottom-right-radius: $radius-cta;
+    padding-top: $section-padding-y;
+    padding-bottom: $section-padding-y;
+
+    &::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+            90deg,
+            rgba($color-text, 0.65) 0%,
+            rgba($color-text, 0.4) 60%,
+            rgba($color-text, 0.2) 100%
+        );
+    }
+
+    &__inner {
+        position: relative;
+        z-index: 2;
+        min-height: 360px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 18px;
+        max-width: 700px;
+        padding-top: 60px;
+        padding-bottom: 60px;
+
+        @include media-tablet {
+            min-height: 300px;
+            padding-top: 50px;
+            padding-bottom: 50px;
+        }
+    }
+
+    &__smile {
+        position: absolute;
+        right: 60px;
+        bottom: 30px;
+        width: 120px;
+        height: auto;
+        z-index: 1;
+        pointer-events: none;
+        filter: brightness(0) invert(1);
+        opacity: 0.85;
+
+        @include media-laptop {
+            width: 90px;
+            right: 30px;
+            bottom: 20px;
+        }
+
+        @include media-tablet {
+            width: 70px;
+            right: 20px;
+            bottom: 15px;
+        }
+
+        @include media-mobile {
+            width: 50px;
+            right: 15px;
+            bottom: 10px;
+        }
+    }
+
+    &__heading {
+        color: $color-white;
+        margin-bottom: 0;
+
+        &::after {
+            background-color: rgba($color-white, 0.5);
+        }
+    }
+
+    &__text {
+        font-family: $font-body;
+        font-size: $font-size-base;
+        line-height: 1.5;
+        color: $color-white;
+        max-width: 480px;
+    }
+
+    &__btn {
+        align-self: flex-start;
+        margin-top: 10px;
+    }
+}

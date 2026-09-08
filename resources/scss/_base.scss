@@ -1,0 +1,17 @@
+// =============================================================================
+// Base
+// =============================================================================
+@use 'variables' as *;
+
+body {
+    font-family: $font-body;
+    font-size: $font-size-base;
+    line-height: 1.5;
+    color: $color-text;
+    background-color: $color-white;
+}
+
+::selection {
+    background-color: $color-primary;
+    color: $color-white;
+}

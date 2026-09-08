@@ -1,0 +1,93 @@
+// =============================================================================
+// Heading h2
+// =============================================================================
+@use '../variables' as *;
+@use '../mixins' as *;
+
+.heading {
+    font-family: $font-heading;
+    font-weight: 600;
+    font-size: $font-size-h2;
+    line-height: 1.2;
+    color: $color-primary;
+    position: relative;
+    padding-bottom: 20px;
+    margin-bottom: 30px;
+
+    &::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 200px;
+        height: 1px;
+        background-color: $color-bg-muted;
+    }
+
+    &--center {
+        text-align: center;
+
+        &::after {
+            left: 50%;
+            transform: translateX(-50%);
+        }
+    }
+
+    &--cta {
+        color: $color-white;
+        font-size: $font-size-cta-h2;
+    }
+
+    @include media-tablet {
+        font-size: 26px;
+        padding-bottom: 16px;
+        margin-bottom: 24px;
+
+        &::after {
+            width: 140px;
+        }
+
+        &--cta {
+            font-size: 22px;
+        }
+    }
+}
+
+.heading-h3 {
+    font-family: $font-heading;
+    font-weight: 600;
+    font-size: $font-size-h3;
+    line-height: 1.25;
+    color: $color-primary;
+    position: relative;
+    padding-bottom: 16px;
+    margin-bottom: 24px;
+
+    &::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 200px;
+        height: 1px;
+        background-color: $color-bg-muted;
+    }
+
+    &--light {
+        color: $color-bg-light;
+
+        &::after {
+            background-color: $color-bg-light;
+        }
+    }
+
+    @include media-tablet {
+        font-size: 20px;
+        padding-bottom: 12px;
+        margin-bottom: 18px;
+
+        &::after {
+            width: 140px;
+        }
+    }
+}

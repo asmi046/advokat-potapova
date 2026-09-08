@@ -1,0 +1,167 @@
+// =============================================================================
+// Hero
+// =============================================================================
+@use "../variables" as *;
+@use "../mixins" as *;
+
+.hero {
+    position: relative;
+    overflow: hidden;
+    border-bottom-left-radius: $radius-hero;
+    background-color: #2a2a2a;
+    background-image: url("/img/hero.webp");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    &::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+            90deg,
+            rgba($color-text, 0.55) 0%,
+            rgba($color-text, 0.25) 50%,
+            rgba($color-text, 0) 100%
+        );
+        z-index: 1;
+    }
+
+    &__inner {
+        position: relative;
+        z-index: 2;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 40px;
+        min-height: 700px;
+
+        @include media-laptop {
+            min-height: 600px;
+        }
+
+        @include media-tablet {
+            min-height: 520px;
+            gap: 20px;
+        }
+
+        @include media-mobile {
+            flex-direction: column;
+            justify-content: center;
+            min-height: 460px;
+        }
+    }
+
+    &__content {
+        position: relative;
+        z-index: 2;
+        max-width: 620px;
+        color: $color-white;
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+    }
+
+    &__title {
+        font-family: $font-heading;
+        font-size: $font-size-hero-h1;
+        font-weight: 700;
+        line-height: 1.05;
+        color: $color-white;
+        margin: 0;
+
+        @include media-laptop {
+            font-size: 64px;
+        }
+
+        @include media-tablet {
+            font-size: 48px;
+        }
+
+        @include media-mobile {
+            font-size: 40px;
+        }
+    }
+
+    &__role {
+        font-family: $font-heading;
+        font-size: $font-size-hero-role;
+        font-style: italic;
+        color: $color-primary;
+        line-height: 1.2;
+        margin: 0;
+
+        @include media-laptop {
+            font-size: 32px;
+        }
+
+        @include media-tablet {
+            font-size: 26px;
+        }
+
+        @include media-mobile {
+            font-size: 22px;
+        }
+    }
+
+    &__subtitle {
+        font-family: $font-body;
+        font-size: $font-size-hero-sub;
+        color: $color-white;
+        line-height: 1.25;
+        margin: 0;
+        margin-top: 8px;
+
+        @include media-laptop {
+            font-size: 28px;
+        }
+
+        @include media-tablet {
+            font-size: 22px;
+        }
+
+        @include media-mobile {
+            font-size: 18px;
+        }
+    }
+
+    &__cta {
+        margin-top: 20px;
+        align-self: flex-start;
+
+        @include media-mobile {
+            align-self: stretch;
+        }
+    }
+
+    &__photo {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        z-index: 1;
+        height: 100%;
+        max-height: 600px;
+        pointer-events: none;
+
+        img {
+            display: block;
+            height: 100%;
+            width: auto;
+            max-width: none;
+            object-fit: contain;
+            object-position: bottom right;
+        }
+
+        @include media-laptop {
+            max-height: 500px;
+        }
+
+        @include media-tablet {
+            max-height: 380px;
+        }
+
+        @include media-mobile {
+            display: none;
+        }
+    }
+}

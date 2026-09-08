@@ -1,0 +1,15 @@
+// =============================================================================
+// Container
+// =============================================================================
+@use '../variables' as *;
+
+.container {
+    width: 100%;
+    max-width: $container-width;
+    margin-left: auto;
+    margin-right: auto;
+
+    @media (max-width: ($bp-wide - 1px)) {
+        width: $container-mobile;
+    }
+}

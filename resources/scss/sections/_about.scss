@@ -1,0 +1,78 @@
+// =============================================================================
+// About
+// =============================================================================
+@use '../variables' as *;
+@use '../mixins' as *;
+
+.about {
+    @include section-padding;
+
+    &__heading {
+        margin-bottom: 40px;
+    }
+
+    &__grid {
+        display: grid;
+        grid-template-columns: minmax(300px, 0.7fr) 1fr;
+        gap: 60px;
+        align-items: flex-start;
+
+        @include media-laptop {
+            grid-template-columns: 1fr;
+            gap: 40px;
+        }
+    }
+
+    &__photo-wrap {
+        display: flex;
+        gap: 5px;
+        align-items: stretch;
+    }
+
+    &__photo {
+        flex: 1;
+        border-top-left-radius: $radius-image;
+        border-bottom-left-radius: $radius-image;
+        border-bottom-right-radius: $radius-image;
+        overflow: hidden;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+    }
+
+    &__bar {
+        width: 60px;
+        background-color: $color-bg-light;
+        border-top-right-radius: $radius-image;
+        border-bottom-left-radius: $radius-image;
+        border-bottom-right-radius: $radius-image;
+        position: relative;
+        flex-shrink: 0;
+
+        img {
+            position: absolute;
+            right: 10px;
+            bottom: 10px;
+            width: 30px;
+            height: auto;
+        }
+    }
+
+    &__text {
+        display: flex;
+        flex-direction: column;
+        gap: 18px;
+        font-family: $font-body;
+        font-size: $font-size-base;
+        line-height: 1.55;
+        color: $color-text;
+    }
+
+    &__paragraph {
+        margin: 0;
+    }
+}

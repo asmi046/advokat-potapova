@@ -1,0 +1,132 @@
+// =============================================================================
+// Header
+// =============================================================================
+@use '../variables' as *;
+@use '../mixins' as *;
+
+.header {
+    position: sticky;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    background-color: $color-white;
+    border-bottom: 1px solid rgba($color-text, 0.05);
+
+    &__inner {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 30px;
+        padding-top: 15px;
+        padding-bottom: 15px;
+    }
+
+    &__logo {
+        flex-shrink: 0;
+    }
+
+    &__nav {
+        flex: 1;
+        display: flex;
+        justify-content: center;
+    }
+
+    &__contacts {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        gap: 4px;
+        flex-shrink: 0;
+    }
+
+    &__contact-link {
+        font-family: $font-body;
+        line-height: 1.2;
+        transition: color $transition-base;
+
+        &--phone {
+            font-size: 24px;
+            color: $color-primary;
+            font-weight: 500;
+        }
+
+        &--email {
+            font-size: $font-size-base;
+            color: $color-bg-muted;
+        }
+
+        &:hover,
+        &:focus-visible {
+            opacity: 0.75;
+        }
+    }
+
+    @include media-laptop {
+        &__inner {
+            gap: 20px;
+        }
+
+        &__nav {
+            display: none;
+        }
+
+        &__contacts {
+            align-items: flex-end;
+        }
+    }
+
+    @include media-tablet {
+        &__contacts {
+            gap: 2px;
+        }
+
+        &__contact-link--phone {
+            font-size: 18px;
+        }
+
+        &__contact-link--email {
+            font-size: 13px;
+        }
+    }
+
+    @include media-mobile {
+        &__inner {
+            gap: 10px;
+            padding-top: 10px;
+            padding-bottom: 10px;
+        }
+
+        &__contact-link--phone {
+            font-size: 15px;
+        }
+
+        &__contact-link--email {
+            font-size: 12px;
+        }
+    }
+}
+
+.nav {
+    &__list {
+        @include reset-list;
+        display: flex;
+        align-items: center;
+        gap: 30px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    &__link {
+        font-family: $font-body;
+        font-size: $font-size-sm;
+        color: $color-text;
+        transition: color $transition-base;
+        white-space: nowrap;
+
+        &:hover,
+        &:focus-visible {
+            color: $color-primary;
+        }
+    }
+}

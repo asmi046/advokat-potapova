@@ -1,0 +1,98 @@
+// =============================================================================
+// Services
+// =============================================================================
+@use '../variables' as *;
+@use '../mixins' as *;
+
+.services {
+    @include section-padding;
+
+    &__heading {
+        margin-bottom: 40px;
+    }
+
+    &__grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 24px;
+
+        @include media-laptop {
+            grid-template-columns: 1fr;
+        }
+    }
+}
+
+.service-card {
+    position: relative;
+    padding: 40px;
+    border-radius: $radius-card;
+    overflow: hidden;
+    background-color: $color-bg-light;
+    background-repeat: no-repeat;
+    background-position: right bottom;
+    background-size: 60% auto;
+    display: flex;
+    flex-direction: column;
+    min-height: 460px;
+
+    &__title {
+        // styles inherited from .heading-h3
+    }
+
+    &__list {
+        @include reset-list;
+        margin-bottom: 30px;
+        flex: 1;
+    }
+
+    &__item {
+        position: relative;
+        padding-left: 22px;
+        font-family: $font-body;
+        font-style: italic;
+        font-size: $font-size-base;
+        line-height: 1.55;
+        margin-bottom: 8px;
+        color: $color-text;
+
+        &::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 11px;
+            width: 10px;
+            height: 1px;
+            background-color: currentColor;
+        }
+    }
+
+    &__cta {
+        align-self: flex-start;
+    }
+
+    &--light {
+        background-color: $color-bg-light;
+        color: $color-text;
+        background-image: url('/img/vesi_bg.svg');
+        background-size: 80% auto;
+    }
+
+    &--dark {
+        background-color: $color-primary;
+        color: $color-white;
+        background-image: none;
+
+        .service-card__item {
+            color: $color-white;
+        }
+    }
+
+    @include media-tablet {
+        padding: 28px;
+        min-height: auto;
+
+        &--light {
+            background-size: 70% auto;
+        }
+    }
+}

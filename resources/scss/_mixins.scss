@@ -1,0 +1,68 @@
+// =============================================================================
+// Mixins
+// =============================================================================
+@use 'variables' as *;
+
+@mixin container {
+    width: 100%;
+    max-width: $container-width;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 0;
+    padding-right: 0;
+
+    @media (max-width: ($bp-laptop - 1px)) {
+        width: $container-mobile;
+    }
+}
+
+@mixin section-padding {
+    padding-top: $section-padding-y;
+    padding-bottom: $section-padding-y;
+}
+
+@mixin media-mobile {
+    @media (max-width: ($bp-mobile - 1px)) {
+        @content;
+    }
+}
+
+@mixin media-tablet {
+    @media (max-width: ($bp-tablet - 1px)) {
+        @content;
+    }
+}
+
+@mixin media-laptop {
+    @media (max-width: ($bp-laptop - 1px)) {
+        @content;
+    }
+}
+
+@mixin media-desktop {
+    @media (max-width: ($bp-desktop - 1px)) {
+        @content;
+    }
+}
+
+@mixin media-wide {
+    @media (max-width: ($bp-wide - 1px)) {
+        @content;
+    }
+}
+
+@mixin reset-button {
+    padding: 0;
+    background: none;
+    border: none;
+    font: inherit;
+    color: inherit;
+    cursor: pointer;
+    outline: none;
+}
+
+@mixin reset-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}

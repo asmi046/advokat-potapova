@@ -1,0 +1,49 @@
+// =============================================================================
+// Variables
+// =============================================================================
+
+// Colors
+$color-primary:        #C1AB74;
+$color-bg-light:       #f5f4f3;
+$color-bg-muted:       #817e77;
+$color-text:           #1d1d1b;
+$color-footer:         #1e1f28;
+$color-white:          #ffffff;
+
+// Typography
+$font-body:            'FiraSansCondensed', sans-serif;
+$font-heading:         'Playfair Display', serif;
+
+$font-size-base:       16px;
+$font-size-sm:         14px;
+$font-size-lg:         18px;
+
+$font-size-h2:         32px;
+$font-size-h3:         24px;
+$font-size-cta-h2:     28px;
+$font-size-hero-h1:    82px;
+$font-size-hero-role:  38px;
+$font-size-hero-sub:   32px;
+
+// Layout
+$container-width:      1400px;
+$container-mobile:     94%;
+$section-padding-y:    30px;
+
+// Border radius
+$radius-full:          50%;
+$radius-card:          20px;
+$radius-image:         40px;
+$radius-hero:          200px;
+$radius-cta:           100px;
+$radius-button:        20px;
+
+// Breakpoints
+$bp-mobile:            480px;
+$bp-tablet:            768px;
+$bp-laptop:            1024px;
+$bp-desktop:           1280px;
+$bp-wide:              1440px;
+
+// Transitions
+$transition-base:      0.3s ease;
