@@ -4,7 +4,7 @@
 
 <section class="cta" aria-labelledby="cta-title">
     <div class="container cta__inner">
-        <x-heading id="cta-title" :cta="true">{!! $cta['title'] !!}</x-heading>
+        <x-heading id="cta-title">{!! $cta['title'] !!}</x-heading>
         <p class="cta__text">{{ $cta['text'] }}</p>
         <div class="cta__btn">
             <x-button

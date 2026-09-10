@@ -1,8 +1,10 @@
 <x-layouts.site>
     @include('sections.hero')
     @include('sections.services')
-    @include('sections.about')
-    @include('sections.cases')
     @include('sections.cta')
+    @include('sections.cases')
+    @include('sections.about')
     @include('sections.pricing')
+    @include('sections.reviews')
+    @include('sections.certificates')
 </x-layouts.site>

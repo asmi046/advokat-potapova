@@ -33,11 +33,6 @@
         }
     }
 
-    &--cta {
-        color: $color-white;
-        font-size: $font-size-cta-h2;
-    }
-
     @include media-tablet {
         font-size: 26px;
         padding-bottom: 16px;
@@ -45,10 +40,6 @@
 
         &::after {
             width: 140px;
-        }
-
-        &--cta {
-            font-size: 22px;
         }
     }
 }

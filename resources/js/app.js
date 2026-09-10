@@ -1,4 +1,5 @@
 import EmblaCarousel from 'embla-carousel';
+import GLightbox from 'glightbox';
 
 document.addEventListener('DOMContentLoaded', () => {
     const carousels = document.querySelectorAll('[data-carousel]');
@@ -37,5 +38,12 @@ document.addEventListener('DOMContentLoaded', () => {
         embla.on('select', updateButtons);
         embla.on('reInit', updateButtons);
         updateButtons();
+    });
+
+    GLightbox({
+        selector: '.glightbox',
+        touchNavigation: true,
+        loop: false,
+        autoplayVideos: false,
     });
 });

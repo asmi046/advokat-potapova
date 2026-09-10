@@ -17,6 +17,9 @@
 // Base
 @use 'base';
 
+// Vendor
+@use 'glightbox/dist/css/glightbox.min.css';
+
 // Components
 @use 'components/container';
 @use 'components/button';
@@ -32,3 +35,5 @@
 @use 'sections/cta';
 @use 'sections/cases';
 @use 'sections/pricing';
+@use 'sections/reviews';
+@use 'sections/certificates';

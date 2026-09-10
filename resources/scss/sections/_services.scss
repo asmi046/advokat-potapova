@@ -24,7 +24,7 @@
 
 .service-card {
     position: relative;
-    padding: 40px;
+    padding: $card-padding;
     border-radius: $radius-card;
     overflow: hidden;
     background-color: $color-bg-light;

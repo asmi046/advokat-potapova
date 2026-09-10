@@ -45,7 +45,7 @@
     }
 
     &__bar {
-        width: 60px;
+        width: 100px;
         background-color: $color-bg-light;
         border-top-right-radius: $radius-image;
         border-bottom-left-radius: $radius-image;
@@ -55,9 +55,9 @@
 
         img {
             position: absolute;
-            right: 10px;
-            bottom: 10px;
-            width: 30px;
+            right: 12px;
+            bottom: 15px;
+            width: 75%;
             height: auto;
         }
     }

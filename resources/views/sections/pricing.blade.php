@@ -7,24 +7,15 @@
         <x-heading id="pricing-title">Стоимость услуг</x-heading>
 
         @foreach ($pricing as $groupIndex => $group)
-            @php
-                $items = $group['items'];
-                $third = (int) ceil(count($items) / 3);
-            @endphp
-
             <div class="pricing__group">
                 <h3 class="pricing__group-title">{{ $group['title'] }}</h3>
 
                 <div class="pricing__grid">
-                    @foreach ($items as $i => $item)
-                        @php
-                            $positionInGroup = $i % 3;
-                            $muted = $positionInGroup === 2;
-                        @endphp
+                    @foreach ($group['items'] as $item)
                         <x-price-card
                             :description="$item['description']"
                             :price="$item['price']"
-                            :muted="$muted"
+                            :muted="$groupIndex === 1"
                         />
                     @endforeach
                 </div>

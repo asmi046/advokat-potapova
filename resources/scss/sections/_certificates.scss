@@ -1,11 +1,11 @@
 // =============================================================================
-// Cases carousel
+// Certificates carousel
 // =============================================================================
 @use 'sass:color';
 @use '../variables' as *;
 @use '../mixins' as *;
 
-.cases {
+.certificates {
     @include section-padding;
 
     &__top {
@@ -58,73 +58,55 @@
             height: 42px;
         }
     }
-}
 
-.cases__carousel {
-    overflow: hidden;
-}
-
-.cases__carousel-track {
-    display: flex;
-    gap: 24px;
-    touch-action: pan-y;
-
-    @include media-tablet {
-        gap: 16px;
-    }
-}
-
-.case-card {
-    flex: 0 0 calc((100% - 48px) / 3);
-
-    @include media-laptop {
-        flex: 0 0 calc((100% - 32px) / 2);
+    &__carousel {
+        overflow: hidden;
     }
 
-    @include media-tablet {
-        flex: 0 0 calc((100% - 16px) / 2);
+    &__carousel-track {
+        display: flex;
+        gap: 24px;
+        touch-action: pan-y;
+
+        @include media-tablet {
+            gap: 16px;
+        }
     }
 
-    @include media-mobile {
-        flex: 0 0 100%;
+    &__slide {
+        flex: 0 0 calc((100% - 48px) / 3);
+
+        @include media-laptop {
+            flex: 0 0 calc((100% - 32px) / 2);
+        }
+
+        @include media-tablet {
+            flex: 0 0 calc((100% - 16px) / 2);
+        }
+
+        @include media-mobile {
+            flex: 0 0 100%;
+        }
     }
-}
 
-.case-card__inner {
-    background-color: #F5F5F5;
-    border-radius: $radius-card;
-    padding: $card-padding;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-}
-
-.case-card__title {
-    font-family: $font-heading;
-    font-weight: 600;
-    font-size: 24px;
-    line-height: 1.25;
-    color: $color-primary;
-    margin: 0;
-    padding-bottom: 16px;
-    position: relative;
-
-    &::after {
-        content: '';
-        position: absolute;
-        left: 0;
-        bottom: 0;
-        width: 200px;
-        height: 1px;
-        background-color: $color-bg-muted;
+    &__image {
+        display: block;
+        width: 100%;
+        height: auto;
+        border-radius: $radius-card;
+        object-fit: cover;
+        transition: transform $transition-base;
+        cursor: zoom-in;
     }
-}
 
-.case-card__desc {
-    font-family: $font-body;
-    font-size: $font-size-base;
-    line-height: 1.55;
-    color: $color-text;
-    margin: 0;
+    .glightbox {
+        display: block;
+        border-radius: $radius-card;
+        overflow: hidden;
+
+        &:hover .certificates__image,
+        &:focus-visible .certificates__image {
+            transform: scale(1.02);
+        }
+    }
 }

@@ -27,11 +27,8 @@
         font-family: $font-heading;
         font-weight: 600;
         font-size: $font-size-h3;
-        color: $color-primary;
-        margin-bottom: 10px;
-        text-align: center;
-        padding-bottom: 14px;
-        border-bottom: 1px solid $color-bg-muted;
+        color: $color-text;
+        margin-bottom: 24px;
 
         @include media-tablet {
             font-size: 22px;
@@ -55,7 +52,7 @@
 
 .price-card {
     border-radius: $radius-card;
-    padding: 20px;
+    padding: $card-padding;
     display: flex;
     flex-direction: column;
     gap: 12px;
