@@ -1,4 +1,6 @@
-<x-layouts.site>
+@extends('layouts.site')
+
+@section('content')
     @include('sections.hero')
     @include('sections.services')
     @include('sections.cta')
@@ -7,4 +9,5 @@
     @include('sections.pricing')
     @include('sections.reviews')
     @include('sections.certificates')
-</x-layouts.site>
+    @include('sections.contacts')
+@endsection

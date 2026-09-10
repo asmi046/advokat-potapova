@@ -13,15 +13,14 @@
                     :title="$card['title']"
                     :list="$card['list']"
                 >
-                    <x-slot:default>
-                        <div class="service-card__cta">
-                            <x-button
-                                :type="$card['button']['type']"
-                                :url="$card['button']['url']"
-                                :label="$card['button']['label']"
-                            />
-                        </div>
-                    </x-slot:default>
+                    <div class="service-card__cta">
+                        <x-button
+                            :type="$card['button']['type']"
+                            :url="$card['button']['url']"
+                            :label="$card['button']['label']"
+                            data-popup-open="{{ $card['popup']['id'] ?? '' }}"
+                        />
+                    </div>
                 </x-service-card>
             @endforeach
         </div>

@@ -14,6 +14,10 @@
     background-position: center;
     background-repeat: no-repeat;
 
+    @include media-mobile {
+        border-bottom-left-radius: 30px;
+    }
+
     &::before {
         content: "";
         position: absolute;
@@ -48,7 +52,8 @@
         @include media-mobile {
             flex-direction: column;
             justify-content: center;
-            min-height: 460px;
+            min-height: 320px;
+            gap: 12px;
         }
     }
 
@@ -161,7 +166,7 @@
         }
 
         @include media-mobile {
-            display: none;
+            max-height: 220px;
         }
     }
 }

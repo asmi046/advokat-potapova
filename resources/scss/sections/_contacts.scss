@@ -1,0 +1,106 @@
+// =============================================================================
+// Contacts
+// =============================================================================
+@use '../variables' as *;
+@use '../mixins' as *;
+
+.contacts {
+    @include section-padding;
+
+    &__heading {
+        margin-bottom: 40px;
+    }
+
+    &__grid {
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        gap: 24px;
+
+        @include media-laptop {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    &__info {
+        background-color: $color-primary;
+        color: $color-white;
+        padding: $card-padding;
+        border-radius: $radius-card;
+        display: flex;
+        flex-direction: column;
+
+        @include media-mobile {
+            padding: 28px;
+        }
+    }
+
+    &__group {
+        margin-bottom: 40px;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+
+        .contacts__link,
+        .contacts__text {
+            display: block;
+            margin-top: 8px;
+        }
+    }
+
+    &__label {
+        font-family: $font-body;
+        font-size: $font-size-base;
+        font-weight: 400;
+        color: $color-text;
+        margin: 0;
+    }
+
+    &__link {
+        font-family: $font-body;
+        color: $color-white;
+        font-size: $font-size-base;
+        line-height: 1.4;
+        transition: opacity $transition-base;
+
+        &--lg {
+            font-size: 20px;
+            font-weight: 500;
+            margin-bottom: 6px;
+        }
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+
+        &:hover,
+        &:focus-visible {
+            opacity: 0.75;
+        }
+    }
+
+    &__text {
+        font-family: $font-body;
+        color: $color-white;
+        font-size: $font-size-base;
+        line-height: 1.5;
+        margin: 0;
+        margin-top: 8px;
+    }
+
+    &__map {
+        width: 100%;
+        min-height: 360px;
+        background-color: $color-bg-light;
+        border-radius: $radius-card;
+        overflow: hidden;
+
+        @include media-laptop {
+            min-height: 320px;
+        }
+
+        @include media-mobile {
+            min-height: 260px;
+        }
+    }
+}

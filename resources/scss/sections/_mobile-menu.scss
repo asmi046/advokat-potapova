@@ -1,0 +1,151 @@
+// =============================================================================
+// Mobile menu
+// =============================================================================
+@use 'sass:color';
+@use '../variables' as *;
+@use '../mixins' as *;
+
+.burger {
+    display: none;
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    z-index: 500;
+    width: 56px;
+    height: 56px;
+    border-radius: $radius-full;
+    background-color: $color-primary;
+    color: $color-white;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 6px 20px rgba($color-text, 0.25);
+    transition: background-color $transition-base, transform $transition-base;
+
+    &:hover,
+    &:focus-visible {
+        background-color: color.adjust($color-primary, $lightness: -8%);
+    }
+
+    &__icon {
+        width: 24px;
+        height: 24px;
+
+        &--close {
+            display: none;
+        }
+    }
+
+    &[aria-expanded='true'] {
+        .burger__icon--menu {
+            display: none;
+        }
+
+        .burger__icon--close {
+            display: block;
+        }
+    }
+
+    @include media-laptop {
+        display: inline-flex;
+    }
+
+    @include media-mobile {
+        right: 15px;
+        bottom: 15px;
+        width: 50px;
+        height: 50px;
+    }
+}
+
+.mobile-menu__overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 200;
+    background-color: rgba($color-text, 0.5);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity $transition-base, visibility $transition-base;
+
+    .is-menu-open & {
+        opacity: 1;
+        visibility: visible;
+    }
+}
+
+.mobile-menu {
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    width: 50%;
+    min-width: 280px;
+    max-width: 420px;
+    z-index: 300;
+    background-color: $color-white;
+    transform: translateX(100%);
+    transition: transform $transition-base;
+    overflow-y: auto;
+    padding: 30px;
+    box-shadow: -8px 0 24px rgba($color-text, 0.1);
+
+    .is-menu-open & {
+        transform: translateX(0);
+    }
+
+    &__inner {
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+        min-height: 100%;
+    }
+
+    &__list {
+        @include reset-list;
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        margin-top: 40px;
+        align-items: flex-end;
+        text-align: right;
+    }
+
+    &__link {
+        font-family: $font-body;
+        font-size: 20px;
+        font-weight: 500;
+        color: $color-text;
+        transition: color $transition-base;
+        display: block;
+        padding: 8px 0;
+
+        &:hover,
+        &:focus-visible {
+            color: $color-primary;
+        }
+    }
+
+    &__contacts {
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+        margin-top: auto;
+        align-items: flex-end;
+        text-align: right;
+    }
+
+    &__contact {
+        font-family: $font-body;
+        font-size: $font-size-base;
+        color: $color-text;
+
+        &--phone {
+            font-size: 22px;
+            font-weight: 500;
+            color: $color-primary;
+        }
+    }
+}
+
+body.is-menu-open {
+    overflow: hidden;
+}

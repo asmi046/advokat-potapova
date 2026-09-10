@@ -16,6 +16,10 @@
     padding-top: $section-padding-y;
     padding-bottom: $section-padding-y;
 
+    @include media-mobile {
+        border-bottom-right-radius: 30px;
+    }
+
     &::before {
         content: '';
         position: absolute;
@@ -43,6 +47,11 @@
             min-height: 300px;
             padding-top: 50px;
             padding-bottom: 50px;
+        }
+
+        @include media-mobile {
+            padding-top: 0;
+            padding-bottom: 0;
         }
     }
 

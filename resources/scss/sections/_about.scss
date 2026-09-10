@@ -13,7 +13,7 @@
 
     &__grid {
         display: grid;
-        grid-template-columns: minmax(300px, 0.7fr) 1fr;
+        grid-template-columns: minmax(300px, 0.5fr) 1fr;
         gap: 60px;
         align-items: flex-start;
 
@@ -27,6 +27,7 @@
         display: flex;
         gap: 5px;
         align-items: stretch;
+        max-height: 450px;
     }
 
     &__photo {

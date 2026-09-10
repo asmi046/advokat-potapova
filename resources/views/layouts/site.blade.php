@@ -20,7 +20,18 @@
     <meta name="author" content="{{ $site['author'] }}">
     <meta name="robots" content="index, follow">
     <meta name="theme-color" content="#C1AB74">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-title" content="Потапова">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <link rel="canonical" href="{{ $url }}">
+
+    {{-- Favicons --}}
+    <link rel="icon" href="/img/fav/favicon.ico" sizes="any">
+    <link rel="icon" href="/img/fav/favicon.svg" type="image/svg+xml">
+    <link rel="icon" href="/img/fav/favicon-96x96.png" sizes="96x96" type="image/png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/img/fav/apple-touch-icon.png">
+    <link rel="manifest" href="/site.webmanifest">
 
     {{-- Open Graph --}}
     <meta property="og:type" content="{{ $og['type'] }}">
@@ -45,9 +56,6 @@
         <meta name="twitter:image" content="{{ $twImage }}">
     @endif
 
-    {{-- Favicon --}}
-    <link rel="icon" href="{{ asset('favicon.ico') }}">
-
     {{-- Vite assets --}}
     @vite(['resources/scss/app.scss', 'resources/js/app.js'])
 
@@ -69,9 +77,13 @@
     @include('sections.header')
 
     <main role="main">
-        {{ $slot }}
+        @yield('content')
     </main>
 
     @include('sections.footer')
+
+    @include('sections.popups')
+
+    @stack('scripts')
 </body>
 </html>

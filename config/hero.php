@@ -10,7 +10,7 @@ return [
         'background' => '/img/hero.webp',
         'button' => [
             'type' => 'primary',
-            'url' => '#contacts',
+            'url' => config('contacts.messenger'),
             'label' => 'Написать мне',
         ],
     ],
@@ -22,8 +22,8 @@ return [
         'text' => 'Получите консультацию адвоката — оставьте заявку прямо сейчас',
         'button' => [
             'type' => 'secondary',
-            'url' => '#contacts',
-            'label' => 'написать мне',
+            'url' => config('contacts.messenger'),
+            'label' => 'Написать мне',
         ],
     ],
 ];

@@ -28,6 +28,7 @@
 
 // Sections
 @use 'sections/header';
+@use 'sections/mobile-menu';
 @use 'sections/footer';
 @use 'sections/hero';
 @use 'sections/services';
@@ -37,3 +38,5 @@
 @use 'sections/pricing';
 @use 'sections/reviews';
 @use 'sections/certificates';
+@use 'sections/contacts';
+@use 'sections/popups';
