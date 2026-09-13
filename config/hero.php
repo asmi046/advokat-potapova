@@ -4,7 +4,7 @@ return [
 
     'hero' => [
         'title' => 'Татьяна<br>Потапова',
-        'role' => 'адвокат',
+        'role' => 'адвокат в г. Курске',
         'subtitle' => 'Профессиональная юридическая защита',
         'photo' => '/img/hero-photo.webp',
         'background' => '/img/hero.webp',
