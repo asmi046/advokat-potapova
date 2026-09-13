@@ -26,7 +26,7 @@
             </div>
         </div>
 
-        <div class="certificates__carousel" data-carousel="{{ $carouselId }}">
+        <div class="certificates__carousel" data-carousel="{{ $carouselId }}" data-carousel-loop>
             <div class="certificates__carousel-track">
                 @foreach ($certificates as $cert)
                     <div class="certificates__slide">

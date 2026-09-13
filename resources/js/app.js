@@ -13,11 +13,13 @@ function initCarousels() {
     const carousels = document.querySelectorAll('[data-carousel]');
 
     carousels.forEach((root) => {
+        const loop = root.hasAttribute('data-carousel-loop');
+
         const embla = EmblaCarousel(root, {
-            loop: false,
+            loop,
             align: 'start',
             slidesToScroll: 1,
-            containScroll: 'trimSnaps',
+            containScroll: loop ? false : 'trimSnaps',
         });
 
         const prevBtn = document.querySelector(
@@ -28,6 +30,16 @@ function initCarousels() {
         );
 
         const updateButtons = () => {
+            if (loop) {
+                if (prevBtn) {
+                    prevBtn.disabled = false;
+                }
+                if (nextBtn) {
+                    nextBtn.disabled = false;
+                }
+                return;
+            }
+
             if (prevBtn) {
                 prevBtn.disabled = !embla.canScrollPrev();
             }
