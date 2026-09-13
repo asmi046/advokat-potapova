@@ -6,7 +6,7 @@ return [
     'phone_link' => '+79207124862',
     'email' => 'potg@mail.ru',
     'address' => 'г. Курск, ул. Кати Зеленко, 26',
-    'messenger' => '#',
+    'messenger' => 'https://max.ru/u/f9LHodD0cOL5-exEA0e1NxQO8tiPHj9umpjpM-JDYTJ8Onuw9eELJZvKLFg',
 
     'phones' => [
         [
