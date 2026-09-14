@@ -23,7 +23,7 @@ return [
         'url' => '#reviews',
     ],
     [
-        'label' => 'Сертификаты',
+        'label' => 'Мои грамоты',
         'url' => '#certificates',
     ],
     [

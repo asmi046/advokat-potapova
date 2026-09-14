@@ -2,12 +2,12 @@
 
 @section('content')
     @include('sections.hero')
-    @include('sections.services')
-    @include('sections.cta')
-    @include('sections.cases')
     @include('sections.about')
+    @include('sections.cta')
+    @include('sections.services')
     @include('sections.pricing')
-    @include('sections.reviews')
+    @include('sections.cases')
     @include('sections.certificates')
+    @include('sections.reviews')
     @include('sections.contacts')
 @endsection
