@@ -10,6 +10,7 @@
     "license": "MIT",
     "require": {
         "php": "^8.3",
+        "asmi046/laravel-mobile-menu": "@dev",
         "laravel/framework": "^13.17",
         "laravel/tinker": "^3.0"
     },
@@ -88,5 +89,13 @@
         }
     },
     "minimum-stability": "stable",
-    "prefer-stable": true
+    "prefer-stable": true,
+
+    "repositories": [
+        {
+            "type": "path",
+            "url": "packages/mobile-menu",
+            "options": { "symlink": true }
+        }
+    ]
 }

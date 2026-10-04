@@ -1,3 +1,5 @@
+import './vendor/mobile-menu/mobile-menu.js';
+
 import EmblaCarousel from 'embla-carousel';
 import GLightbox from 'glightbox';
 
@@ -5,7 +7,6 @@ document.addEventListener('DOMContentLoaded', () => {
     initCarousels();
     initLightbox();
     initYandexMap();
-    initMobileMenu();
     initPopups();
 });
 
@@ -67,50 +68,6 @@ function initLightbox() {
         touchNavigation: true,
         loop: false,
         autoplayVideos: false,
-    });
-}
-
-function initMobileMenu() {
-    const burger = document.querySelector('[data-menu-toggle]');
-    const overlay = document.querySelector('[data-menu-overlay]');
-    const menu = document.querySelector('[data-mobile-menu]');
-
-    if (!burger || !overlay || !menu) {
-        return;
-    }
-
-    const open = () => {
-        burger.setAttribute('aria-expanded', 'true');
-        burger.setAttribute('aria-label', 'Закрыть меню');
-        menu.setAttribute('aria-hidden', 'false');
-        overlay.setAttribute('aria-hidden', 'false');
-        document.body.classList.add('is-menu-open');
-    };
-
-    const close = () => {
-        burger.setAttribute('aria-expanded', 'false');
-        burger.setAttribute('aria-label', 'Открыть меню');
-        menu.setAttribute('aria-hidden', 'true');
-        overlay.setAttribute('aria-hidden', 'true');
-        document.body.classList.remove('is-menu-open');
-    };
-
-    const toggle = () => {
-        const isOpen = burger.getAttribute('aria-expanded') === 'true';
-        isOpen ? close() : open();
-    };
-
-    burger.addEventListener('click', toggle);
-    overlay.addEventListener('click', close);
-
-    menu.querySelectorAll('a').forEach((link) => {
-        link.addEventListener('click', close);
-    });
-
-    document.addEventListener('keydown', (event) => {
-        if (event.key === 'Escape' && burger.getAttribute('aria-expanded') === 'true') {
-            close();
-        }
     });
 }
 
